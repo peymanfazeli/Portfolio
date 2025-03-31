@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Article from './Article'
 
 // images
-import face from '../assets/face.png'
+import profile from '../assets/profile.png'
 
 
 // style
@@ -43,7 +43,7 @@ export default function Header() {
 					]}
 				/>
 					<motion.img
-						src={face}
+						src={profile}
 						alt="Profile"
 
 						style={{
@@ -52,8 +52,8 @@ export default function Header() {
 							height: '300px',
 							objectFit: 'contain',
 						}}
-						whileHover={{ rotate: 360 }}
-						transition={{ type: 'spring', mass: 0.5 }}
+						whileHover={{ scale: 1.2 }}
+						transition={{ type: "spring", bounce: 0.25 }}
 						onClick={() => alert('Image clicked')}
 					/>
 				<Article
