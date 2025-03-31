@@ -6,15 +6,13 @@ import Article from './Article'
 // images
 import face from '../assets/face.png'
 
+
 // style
 const Container = styled.div `
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 `
-const ImgContainer = styled.div `
-	position: relative;
-`;
 function HeaderMenu() {
 	return (
 		<>
@@ -32,70 +30,42 @@ function HeaderMenu() {
 }
 export default function Header() {
 	return (
-		<Container
-			className='d-flex flex-column flex-sm-row justify-content-center align-items-center'
-		>
-			<Article
-				title='Front-end Developer'
-				content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
-				buttons={[
-					{ text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
-					{ text: 'Contact Me', onClick: () => alert('Contact Me clicked') },
-				]}
-			/>
-			{/* <ImgContainer>
-				<img
-					src={face}
-					alt='Profile'
-					style={{
-						borderRadius: '50%',
-						width: '150px',
-						height: '300px',
-						objectFit: 'contain',
-						position: 'absolute',
-					 }}
+		<>
+			<Container
+				className='d-flex flex-column flex-sm-row justify-content-center align-items-center'
+			>
+				<Article
+					title='Front-end Developer'
+					content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
+					buttons={[
+						{ text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
+						{ text: 'Contact Me', onClick: () => alert('Contact Me clicked') },
+					]}
 				/>
-			</ImgContainer> */}
-			{/* <img
-					src={face}
-					alt='Profile'
-					style={{
-						borderRadius: '50%',
-						width: '300px',
-						height: '300px',
-						objectFit: 'contain',
-						// position: 'absolute',
-					 }}
-				/> */}
-				<motion.img
-					src={face}
-					alt="Profile"
+					<motion.img
+						src={face}
+						alt="Profile"
 
-					style={{
-						borderRadius: '50%',
-						width: '300px',
-						height: '300px',
-						objectFit: 'contain',
-					}}
-					// initial={{ scale: 0 }}
-					// animate={{ scale: 2 }}
-					// transition={{ duration: 0.5 }}
-
-					// whileHover={{ scale: 1.2 }}
-					// transition={{ type: "spring", stiffness: 300 }}
-					whileHover={{ rotate: 360 }}
-					transition={{ type: 'spring', mass: 0.5 }}
-					onClick={() => alert('Image clicked')}
+						style={{
+							borderRadius: '50%',
+							width: '300px',
+							height: '300px',
+							objectFit: 'contain',
+						}}
+						whileHover={{ rotate: 360 }}
+						transition={{ type: 'spring', mass: 0.5 }}
+						onClick={() => alert('Image clicked')}
+					/>
+				<Article
+					title='Front-end Developer'
+					content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
+					buttons={[
+						{ text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
+						{ text: 'Contact Me', onClick: () => alert('Contact Me clicked') },
+					]}
 				/>
-			<Article
-				title='Front-end Developer'
-				content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
-				buttons={[
-					{ text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
-					{ text: 'Contact Me', onClick: () => alert('Contact Me clicked') },
-				]}
-			/>
-			
-		</Container>
+				
+			</Container>
+		</>
 	)
 }
