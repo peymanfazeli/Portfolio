@@ -11,7 +11,6 @@ import config from '../config';
 const MenuContainer = styled.ul`
 	position: relative;
 	top: 0;
-	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,20 +32,26 @@ const MenuIcon = styled.span`
 const handleMenuIcon = (itemName) =>{
 	switch (itemName) {
 		case 'Home':
-			return <FaHome size={20} color="white" />;
+			return <FaHome size={20} />;
 		case 'GitHub':
-			return <FaGithub size={20} color="white" />;
+			return <FaGithub size={20} />;
 		case 'LinkedIn':
-			return <FaLinkedin size={20} color="white" />;
+			return <FaLinkedin size={20} />;
 		case 'Medium':
-			return <FaMedium size={20} color="white" />;
+			return <FaMedium size={20} />;
 		default:
 			break;
 	}
 }
-export default function Menu() {
+export default function Menu({ theme, onThemeToggle }) {
 	return (
 		<MenuContainer>
+			<button
+				className="btn fixed-top-end"
+				onClick={onThemeToggle}
+			>
+				{theme === "dark" ? "🌞" : "🌙"}
+			</button>
 			{config.menuItems && Object.entries(config.menuItems).map(([key, {name, URL}]) => (
 				<MenuItem key={key} onClick={key.onClick}>
 					<motion.div
@@ -60,7 +65,7 @@ export default function Menu() {
 						</MenuIcon>
 						<a
 							href={`${URL}`}
-							style={{textDecoration: 'none', color: 'white'}}
+							style={{textDecoration: 'none', color: 'inherit'}}
 							target='_blank'
 							rel='noopener noreferrer'
 						>
