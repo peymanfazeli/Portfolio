@@ -24,9 +24,11 @@ module.exports = {
     skills: [
         'HTML',
         'CSS',
+        'Bootstrap',
         'JavaScript',
         'React',
         'React Native',
+        'Redux',
         'GitHub',
     ],
 };

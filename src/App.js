@@ -27,8 +27,6 @@ function App() {
 		const newTheme = theme === "dark" ? "light" : "dark";
 		setTheme(newTheme);
 	}
-
-	
 	
 	return (
 		<div className="App d-flex flex-column justify-content-center align-items-center">
