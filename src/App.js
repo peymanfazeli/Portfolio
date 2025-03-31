@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // components
 import Menu from './components/Menu';
 import Header from './components/Header';
+import Skills from "./components/Skills";
 
 const getInitialTheme = () => {
 	const storedTheme = localStorage.getItem("theme");
@@ -31,12 +32,9 @@ function App() {
 	
 	return (
 		<div className="App d-flex flex-column justify-content-center align-items-center">
-			<div className="d-flex" style={{width: '100%'}}>
-				<Menu  theme={theme} onThemeToggle={toggleTheme} />
-			</div>
-			<header className="App-header">
-				<Header />
-			</header>
+			<Menu  theme={theme} onThemeToggle={toggleTheme} />
+			<Header />
+			<Skills />
 		</div>
 	);
 }

@@ -1,6 +1,9 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import '../App.css';
 import styled from 'styled-components'
+
+// components
 import Article from './Article'
 
 // images
@@ -30,7 +33,7 @@ function HeaderMenu() {
 }
 export default function Header() {
 	return (
-		<>
+		<header className="App-header">
 			<Container
 				className='d-flex flex-column flex-sm-row justify-content-center align-items-center'
 			>
@@ -66,6 +69,6 @@ export default function Header() {
 				/>
 				
 			</Container>
-		</>
+		</header>
 	)
 }
