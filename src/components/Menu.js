@@ -27,10 +27,6 @@ const MenuItem = styled.li`
 export default function Menu() {
 	return (
 		<MenuContainer>
-			<motion.a
-				whileHover={{ scale: 1.2 }}
-				transition={{ type: "spring", stiffness: 300 }}
-			/>
 			{config.menuItems && Object.entries(config.menuItems).map(([key, {name, URL}]) => (
 				<MenuItem key={key} onClick={key.onClick}>
 					<motion.div
