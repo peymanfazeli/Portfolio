@@ -32,7 +32,9 @@ function HeaderMenu() {
 }
 export default function Header() {
 	return (
-		<Container>
+		<Container
+			className='d-flex flex-column flex-sm-row justify-content-center align-items-center'
+		>
 			<Article
 				title='Front-end Developer'
 				content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
@@ -65,7 +67,6 @@ export default function Header() {
 						// position: 'absolute',
 					 }}
 				/> */}
-			<section className="flex flex-col items-center text-center p-10 bg-gray-900 text-white rounded-2xl shadow-lg">
 				<motion.img
 					src={face}
 					alt="Profile"
@@ -86,7 +87,6 @@ export default function Header() {
 					transition={{ type: 'spring', mass: 0.5 }}
 					onClick={() => alert('Image clicked')}
 				/>
-			</section>
 			<Article
 				title='Front-end Developer'
 				content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
