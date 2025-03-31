@@ -5,26 +5,37 @@ const ArticleContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 20px;
+	padding: 10px;
+	position: relative;
 `;
-const ArticleTitle = styled.h1`
-	font-size: 2em;
-	margin-bottom: 20px;
+const BluredBg = styled.div`
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(0, 0, 0, 0.09) 90%);
+	filter: blur(20px);
+	z-index: -1;
+`;
+const ArticleTitle = styled.h3`
+	margin-bottom: 15px;
+`;
+const ArticleDescription = styled.p`
+	text-align: justify;
+	max-width: 450px;
+	margin-bottom: 15px;
 `;
 const ButtonContainer = styled.div`
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
 `;
 const Button = styled.button`
-	background-color: ${props => props.bgColor || '#007BFF'};
+	background: ${props =>  props.bgColor ? `linear-gradient(20deg, ${props.bgColor}, #007BFF)` : '#007BFF'};
 	color: white;
 	border: none;
 	border-radius: 5px;
-	padding: 10px 20px;
-	margin-right: 5px;
+	padding: 5px 15px;
+	margin-right: 15px;
 	text-align: center;
 	text-decoration: none;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 `;
 
 // Array of buttons
@@ -39,13 +50,18 @@ export default function Article({
 }) {
   return (
     <ArticleContainer>
+		<BluredBg />
         <ArticleTitle>{title}</ArticleTitle>
-        <p>{content}</p>
+        <ArticleDescription>{content}</ArticleDescription>
         {
             buttons ? (
 				<ButtonContainer>
 					{buttons.map((button, index) => (
-						<Button key={index} onClick={button.onClick} bgColor={button.bgColor}>
+						<Button
+							key={index}
+							onClick={button.onClick}
+							bgColor={button.bgColor}
+						>
 							{button.text}
 						</Button>
 					))}

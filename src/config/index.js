@@ -1,9 +1,9 @@
 module.exports = {
     menuItems: {
-        home: {
-            name: 'Home',
-            URL: '/',
-        },
+        // home: {
+        //     name: 'Home',
+        //     URL: '/',
+        // },
         github: {
             name: 'GitHub',
             URL: 'https://github.com/peymanfazeli'
@@ -20,5 +20,15 @@ module.exports = {
             name: 'Virgool',
             URL: 'https://virgool.io/@Peymanfazeli',
         },
-    }
+    },
+    skills: [
+        'HTML',
+        'CSS',
+        'Bootstrap',
+        'JavaScript',
+        'React',
+        'React Native',
+        'Redux',
+        'GitHub',
+    ],
 };
