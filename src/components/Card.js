@@ -31,13 +31,6 @@ const BluredBg = styled.div`
 	z-index: -1;
 `;
 
-const CompanyLogos = styled.img `
-	width: 100px;
-	height: 100px;
-	object-fit: contain;
-`;
-
-
 const riseAnimation = (percent) => keyframes`
   0% {
     height: 0%;
@@ -116,25 +109,27 @@ export default function Card({
 	const fillRef = useRef(null);
 
 	useEffect(() => {
-	const observer = new IntersectionObserver(
-		([entry]) => {
-		if (entry.isIntersecting) {
-			setIsVisible(true);
-		}
-		},
-		{ threshold: 0.9 } // Adjust the threshold to control when animation starts
-	);
-
-	if (fillRef.current) {
-		observer.observe(fillRef.current);
-	}
-
-	return () => {
-		if (fillRef.current) {
-		observer.unobserve(fillRef.current);
-		}
-	};
-	}, []);
+		const element = fillRef.current; // Store the current reference
+	  
+		if (!element) return;
+	  
+		const observer = new IntersectionObserver(
+		  ([entry]) => {
+			if (entry.isIntersecting) {
+			  setIsVisible(true);
+			}
+		  },
+		  { threshold: 0.5 }
+		);
+	  
+		observer.observe(element);
+	  
+		return () => {
+		  if (element) {
+			observer.unobserve(element);
+		  }
+		};
+	  }, []);
 	return (
 		<CardContainer type={type} >
 			{type !== 'Experiences' && <BluredBg />}
