@@ -32,8 +32,10 @@ module.exports = {
         'Git',
     ],
     Languages: {
-        "Persian": {name: 'Persian', level: 'Native'},
-        "English": {name: 'English', level: 'UpperIntermediate'},
+        "Persian": {name: 'Persian', level: '100'},
+        "English": {name: 'English', level: '85'},
+        "Turkish": {name: 'Turkish', level: '35'},
+        "Deutsch": {name: 'Deutsch', level: '20'},
     },
     experiences: {
         "BazamBazi": {
@@ -41,7 +43,7 @@ module.exports = {
             date: "2023 - Present",
             description: "Developed and maintained the frontend of the BazamBazi website, Panel and Application using React, React Native and Redux.",
             link: "https://bazambazi.games",
-            img: "../assets/images/bazambazi.png",
+            img: "BazamBazi.png",
         },
     },
     Education: {

@@ -23,7 +23,7 @@ export default function Header() {
 				className='d-flex flex-column flex-sm-row justify-content-center align-items-center'
 			>
 				<Article
-					title='Front-end Developer'
+					title='About me'
 					content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
 					buttons={[
 						{ text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
@@ -45,7 +45,7 @@ export default function Header() {
 						onClick={() => alert('Image clicked')}
 					/>
 				<Article
-					title='Front-end Developer'
+					title='Why should you hire me?'
 					content='I am a front-end developer with a passion for creating beautiful and functional user interfaces.'
 					buttons={[
 						{ text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
