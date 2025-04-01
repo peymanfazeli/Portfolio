@@ -16,21 +16,6 @@ const Container = styled.div `
 	justify-content: space-between;
 	align-items: center;
 `
-function HeaderMenu() {
-	return (
-		<>
-		<div className="logo">My Portfolio</div>
-		<nav>
-			<ul style={{ display: 'flex', listStyle: 'none' }}>
-				<li style={{ margin: '0 10px' }}>Home</li>
-				<li style={{ margin: '0 10px' }}>About</li>
-				<li style={{ margin: '0 10px' }}>Projects</li>
-				<li style={{ margin: '0 10px' }}>Contact</li>
-			</ul>
-		</nav>
-		</>
-	)
-}
 export default function Header() {
 	return (
 		<header className="App-header">
