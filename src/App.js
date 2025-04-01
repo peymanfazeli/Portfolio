@@ -13,7 +13,6 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 1200px;
 `;
 
 const getInitialTheme = () => {
@@ -39,11 +38,9 @@ function App() {
 	
 	return (
 		<div className="App d-flex flex-column justify-content-center align-items-center">
-			<Container id="HeaderSection">
+			<Container>
 				<Menu  theme={theme} onThemeToggle={toggleTheme} />
 				<Header />
-			</Container>
-			<Container id="BodySection">
 				<Section title="Skills" config={config.skills} />
 				<Section title="Languages" config={config.Languages} />
 				<Section title="Experiences" config={config.experiences} />
