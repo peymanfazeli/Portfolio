@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect, useRef } from 'react'
+import styled, { keyframes } from 'styled-components'
+import { motion } from "framer-motion";
 import { FaHtml5, FaCss3, FaReact, FaBootstrap, FaGit  } from "react-icons/fa";
 import { IoLogoJavascript, } from "react-icons/io5";
 import { SiRedux } from "react-icons/si";
@@ -36,6 +37,30 @@ const CompanyLogos = styled.img `
 	object-fit: contain;
 `;
 
+
+const riseAnimation = (percent) => keyframes`
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: ${percent}%;
+  }
+`;
+const FillLevel = styled.div`
+	position: absolute;
+	border-radius: 16px;
+	width: 100%;
+	height: ${props => props.percent}%;
+	background: linear-gradient(0deg, #007BFF 30%, #fff 100%);
+	z-index: 0;
+	bottom: 0;
+	animation: ${(props) => (props.animate ? riseAnimation(props.percent) : "none")} 1.5s ease-out;
+`;
+
+const CardTitle = styled.span`
+	z-index: 1;
+`;
+
 const getCardIcon = (ItemName, type) => {
 	if (type === 'Skills') {
 		switch (ItemName) {
@@ -59,7 +84,19 @@ const getCardIcon = (ItemName, type) => {
 	} else {
 		switch (ItemName) {
 			case 'BazamBazi':
-				return <CompanyLogos src={bzbz} alt={ItemName} />
+				// return <CompanyLogos src={bzbz} alt={ItemName} />
+				return <motion.img
+							src={bzbz}
+							alt="Profile"
+	
+							style={{
+								width: '100px',
+								height: '100px',
+								objectFit: 'contain',
+							}}
+							whileHover={{ rotate: 360}}
+							transition={{ type: "spring", mass: 3.5 }}
+						/>
 			default:
 				return null;
 		}
@@ -67,12 +104,43 @@ const getCardIcon = (ItemName, type) => {
 	
 }
 
-export default function Card({Item, type}) {
+export default function Card({
+	Item,
+	type,
+	img='',
+	description='',
+	level='',
+	date='',
+}) {
+	const [isVisible, setIsVisible] = useState(false);
+	const fillRef = useRef(null);
+
+	useEffect(() => {
+	const observer = new IntersectionObserver(
+		([entry]) => {
+		if (entry.isIntersecting) {
+			setIsVisible(true);
+		}
+		},
+		{ threshold: 0.9 } // Adjust the threshold to control when animation starts
+	);
+
+	if (fillRef.current) {
+		observer.observe(fillRef.current);
+	}
+
+	return () => {
+		if (fillRef.current) {
+		observer.unobserve(fillRef.current);
+		}
+	};
+	}, []);
 	return (
-		<CardContainer type={type}>
+		<CardContainer type={type} >
 			{type !== 'Experiences' && <BluredBg />}
+			{type === 'Languages' && <FillLevel ref={fillRef} percent={level} animate={isVisible} />}
 			{getCardIcon(Item, type)}
-			{Item}
+			<CardTitle>{Item}</CardTitle>
 		</CardContainer>
 	)
 }
