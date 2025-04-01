@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 // styles
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 // components
 import Menu from './components/Menu';
 import Header from './components/Header';
-import Skills from "./components/Skills";
+import Section from "./components/Section";
+import config from "./config";
+// styled components
+const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 1200px;
+`;
 
 const getInitialTheme = () => {
 	const storedTheme = localStorage.getItem("theme");
@@ -30,9 +39,15 @@ function App() {
 	
 	return (
 		<div className="App d-flex flex-column justify-content-center align-items-center">
-			<Menu  theme={theme} onThemeToggle={toggleTheme} />
-			<Header />
-			<Skills />
+			<Container id="HeaderSection">
+				<Menu  theme={theme} onThemeToggle={toggleTheme} />
+				<Header />
+			</Container>
+			<Container id="BodySection">
+				<Section title="Skills" config={config.skills} />
+				<Section title="Languages" config={config.Languages} />
+				<Section title="Experiences" config={config.experiences} />
+			</Container>
 		</div>
 	);
 }

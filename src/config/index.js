@@ -29,6 +29,31 @@ module.exports = {
         'React',
         'React Native',
         'Redux',
-        'GitHub',
+        'Git',
     ],
+    Languages: {
+        "Persian": {name: 'Persian', level: 'Native'},
+        "English": {name: 'English', level: 'UpperIntermediate'},
+    },
+    experiences: {
+        "BazamBazi": {
+            title: "Frontend Developer",
+            date: "2023 - Present",
+            description: "Developed and maintained the frontend of the BazamBazi website, Panel and Application using React, React Native and Redux.",
+            link: "https://bazambazi.games",
+            img: "../assets/images/bazambazi.png",
+        },
+    },
+    Education: {
+        "Ershad damavand University": {
+            title: "Bachelor of Computer Software Engineering",
+            date: "2014 - 2016",
+            description: "Graduated from Ershad damavand University with a degree in Computer Engineering.",
+        },
+        "Sadra University": {
+            title: "Master of Computer Software Engineering",
+            date: "2016 - 2019",
+            description: "Graduated from Sadra University with a degree in Computer Engineering.",
+        },
+    },
 };

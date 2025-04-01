@@ -19,5 +19,6 @@ code {
 
 .theme-dark {
   background-color: #202334;
+  /* background: linear-gradient(0deg, rgba(41,9,121,1) 0%, rgb(124, 163, 255) 100%); */
   color: #ffffff;
 }
