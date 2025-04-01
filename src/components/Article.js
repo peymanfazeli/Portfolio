@@ -27,7 +27,7 @@ const ButtonContainer = styled.div`
 	display: flex;
 `;
 const Button = styled.button`
-	background: ${props =>  props.bgColor ? `linear-gradient(20deg, ${props.bgColor}, #007BFF)` : '#007BFF'};
+	background: ${props =>  props.bgColor ? `linear-gradient(0deg, ${props.bgColor} 30%, #007BFF 100%)` : '#007BFF'};
 	color: white;
 	border: none;
 	border-radius: 5px;
