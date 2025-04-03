@@ -32,7 +32,7 @@ export default function Header() {
 					content=''
 					buttons={[
 						// { text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
-						{ text: 'More about me?', onClick: () => alert('Contact Me clicked') },
+						// { text: 'More about me?', onClick: () => alert('Contact Me clicked') },
 					]}
 				>
 					{/* @TODO: these articles can come from config file and also rendered in a loop instead of writing them one by one */}
@@ -65,7 +65,7 @@ export default function Header() {
 					title='Why should you hire me?'
 					content=''
 					buttons={[
-						{ text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
+						// { text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
 						// { text: 'Contact Me', onClick: () => alert('Contact Me clicked') },
 					]}
 				>
