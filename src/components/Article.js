@@ -45,14 +45,16 @@ const Button = styled.button`
 // ],
 export default function Article({
     title = "My First Article",
-    content = "This is the content of my first article. It is a simple example of how to create a styled component in React.",
+    content = "",
     buttons = [],
+	children,
 }) {
   return (
     <ArticleContainer>
 		<BluredBg />
         <ArticleTitle>{title}</ArticleTitle>
         <ArticleDescription>{content}</ArticleDescription>
+		{children}
         {
             buttons ? (
 				<ButtonContainer>
