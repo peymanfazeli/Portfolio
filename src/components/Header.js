@@ -8,6 +8,7 @@ import Article from './Article'
 
 // images
 import profile from '../assets/profile.png'
+import TextExpander from './TextExpander';
 
 
 // style
@@ -35,16 +36,20 @@ export default function Header() {
 						// { text: 'More about me?', onClick: () => alert('Contact Me clicked') },
 					]}
 				>
-					{/* @TODO: these articles can come from config file and also rendered in a loop instead of writing them one by one */}
-					<ArticleDescription>
-					👋 Hi! Im Peyman – a front-end developer specializing in React and Redux, with +2 years of experience in the web development world. Im passionate about learning, problem-solving, and creating great user experiences.
-					</ArticleDescription>
-					<ArticleDescription>
-					🎯 My focus is on React, Redux, UI design, backend integration, and learning React Native.
-					</ArticleDescription>
-					<ArticleDescription>
-					🔥 Im always looking for ways to improve and expand my skills in front-end and full-stack development!
-					</ArticleDescription>
+					{/* @TODO: these articles can come from config file*/}
+					<TextExpander
+						style={{
+							textAlign: 'justify',
+							maxWidth: '450px',
+							marginBottom:' 15px',
+						}}
+						buttonColor='transparent'
+						buttonTextColor='cyan'
+					>
+						👋 Hi! Im Peyman – a front-end developer specializing in React and Redux, with +2 years of experience in the web development world. Im passionate about learning, problem-solving, and creating great user experiences.
+						🎯 My focus is on React, Redux, UI design, backend integration, and learning React Native.
+						🔥 Im always looking for ways to improve and expand my skills in front-end and full-stack development!
+					</TextExpander>
 
 				</Article>
 					<motion.img
@@ -69,16 +74,18 @@ export default function Header() {
 						// { text: 'Contact Me', onClick: () => alert('Contact Me clicked') },
 					]}
 				>
-					{/* @TODO: these articles can come from config file and also rendered in a loop instead of writing them one by one */}
-					<ArticleDescription>
-						✅Passionate about clean UI, performance, and smooth user experiences.
-					</ArticleDescription>
-					<ArticleDescription>
-					✅ I excel in problem-solving, backend integration, and teamwork.
-					</ArticleDescription>
-					<ArticleDescription>
-					✅ I’m constantly learning and improving, staying up to date with the latest web technologies. If you're looking for a dedicated, adaptable, and growth-oriented developer, let’s build something great together!
-					</ArticleDescription>
+					<TextExpander
+						style={{
+							textAlign: 'justify',
+							maxWidth: '450px',
+							marginBottom:' 15px',
+						}}
+						buttonColor='transparent'
+						buttonTextColor='cyan'
+						newLineSymbol={'✅'}
+					>
+						✅Passionate about clean UI, performance, and smooth user experiences. ✅ I excel in problem-solving, backend integration, and teamwork. ✅ I’m constantly learning and improving, staying up to date with the latest web technologies. If you're looking for a dedicated, adaptable, and growth-oriented developer, let’s build something great together!
+					</TextExpander>
 
 				</Article>
 				
