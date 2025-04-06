@@ -17,11 +17,6 @@ const Container = styled.div `
 	justify-content: space-between;
 	align-items: center;
 `
-const ArticleDescription = styled.p`
-	text-align: justify;
-	max-width: 450px;
-	margin-bottom: 15px;
-`;
 export default function Header() {
 	return (
 		<header className="App-header">
