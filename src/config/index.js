@@ -46,6 +46,11 @@ module.exports = {
             img: "BazamBazi.png",
         },
     },
+    ContactInfo: [
+        {name: 'Telegram', link: "https://t.me/peymanfazeli"},
+        {name: 'Gmail', link: "https://mail.google.com/mail/?view=cm&fs=1&to=peymanfazeli.work@gmail.com"},
+        {name: 'LinkedIn', link: "https://www.linkedin.com/in/peymanfazeli/"},
+    ],
     Education: {
         "Ershad damavand University": {
             title: "Bachelor of Computer Software Engineering",
