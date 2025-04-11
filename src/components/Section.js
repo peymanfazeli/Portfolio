@@ -3,14 +3,21 @@ import Card from './Card'
 const renderCard = (config, title) => {
     if (typeof config === 'object' && !Array.isArray(config)) {
         return Object.entries(config).map(([key, value]) => {
-			return <Card
-			key={key}
-			Item={value.name || key}
-			type={title}
-			img={value.img || ''}
-			description={value.description}
-			level={value.level || ''}
-			/>
+			return(
+				<Card
+					key={key}
+					Item={value.name || key}
+					type={title}
+					img={value.img || ''}
+					description={value.description}
+					level={value.level || ''}
+					link={value.link || ''}
+				>
+					{title === 'Experiences' && value.date ? (
+						<span style={{fontSize: '10px'}}>{value.date}</span>
+					) : null}
+				</Card>
+			)
         });
     } else if (Array.isArray(config)) {
 		return config.map((item, index) => <Card key={index} Item={item} type={title} />)
