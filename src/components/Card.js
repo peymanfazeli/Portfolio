@@ -10,7 +10,7 @@ import bzbz from '../assets/BazamBazi.png'
 // styles
 const CardContainer = styled.div`
 	width: 100px;
-	height: 100px;
+	height:  ${props => props.type !== 'Experiences' ? '100px' : 'auto' };
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
@@ -54,7 +54,7 @@ const CardTitle = styled.span`
 	z-index: 1;
 `;
 
-const getCardIcon = (ItemName, type) => {
+const getCardIcon = (ItemName, type, link) => {
 	if (type === 'Skills') {
 		switch (ItemName) {
 			case 'HTML':
@@ -78,10 +78,16 @@ const getCardIcon = (ItemName, type) => {
 		switch (ItemName) {
 			case 'BazamBazi':
 				// return <CompanyLogos src={bzbz} alt={ItemName} />
-				return <motion.img
+				return (
+					<a
+						href={link}
+						target="_blank"
+  						rel="noopener noreferrer"
+					>
+						<motion.img
 							src={bzbz}
 							alt="Profile"
-	
+
 							style={{
 								width: '100px',
 								height: '100px',
@@ -90,6 +96,8 @@ const getCardIcon = (ItemName, type) => {
 							whileHover={{ rotate: 360}}
 							transition={{ type: "spring", mass: 3.5 }}
 						/>
+					</a>
+				)
 			default:
 				return null;
 		}
@@ -104,6 +112,8 @@ export default function Card({
 	description='',
 	level='',
 	date='',
+	link='',
+	children
 }) {
 	const [isVisible, setIsVisible] = useState(false);
 	const fillRef = useRef(null);
@@ -134,8 +144,9 @@ export default function Card({
 		<CardContainer type={type} >
 			{type !== 'Experiences' && <BluredBg />}
 			{type === 'Languages' && <FillLevel ref={fillRef} percent={level} animate={isVisible} />}
-			{getCardIcon(Item, type)}
+			{getCardIcon(Item, type, link)}
 			<CardTitle>{Item}</CardTitle>
+			{children}
 		</CardContainer>
 	)
 }
