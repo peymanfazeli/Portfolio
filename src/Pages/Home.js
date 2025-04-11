@@ -7,11 +7,13 @@ import Menu from '../components/Menu';
 import Header from '../components/Header';
 import Section from "../components/Section";
 import config from "../config";
+import ContactMe from "../components/ContactMe";
 // styled components
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: relative;
 `;
 
 const getInitialTheme = () => {
@@ -41,6 +43,7 @@ export default function Home() {
 			<Section title="Skills" config={config.skills} />
 			<Section title="Languages" config={config.Languages} />
 			<Section title="Experiences" config={config.experiences} />
+			<ContactMe />
 		</Container>
 	)
 }
