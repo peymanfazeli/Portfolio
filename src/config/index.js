@@ -26,6 +26,7 @@ module.exports = {
         'CSS',
         'Bootstrap',
         'JavaScript',
+        'RestApi',
         'React',
         'React Native',
         'Redux',
@@ -50,6 +51,10 @@ module.exports = {
         {name: 'Telegram', link: "https://t.me/peymanfazeli"},
         {name: 'Gmail', link: "https://mail.google.com/mail/?view=cm&fs=1&to=peymanfazeli.work@gmail.com"},
         {name: 'LinkedIn', link: "https://www.linkedin.com/in/peymanfazeli/"},
+    ],
+    Resumes: [
+        {name: 'English Resume', link: "/Peyman_Fazeli_Resume_English.pdf"},
+        {name: 'Persian Resume', link: "/Peyman_Fazeli_Resume_Persian.pdf"},
     ],
     Education: {
         "Ershad damavand University": {
