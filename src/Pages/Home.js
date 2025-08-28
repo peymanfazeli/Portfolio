@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Section from "../components/Section";
 import config from "../config";
 import ContactMe from "../components/ContactMe";
+import Resume from "../components/Resume";
 // styled components
 const Container = styled.div`
 	display: flex;
@@ -44,6 +45,7 @@ export default function Home() {
 			<Section title="Languages" config={config.Languages} />
 			<Section title="Experiences" config={config.experiences} />
 			<ContactMe />
+			<Resume />
 		</Container>
 	)
 }

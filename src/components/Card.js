@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3, FaReact, FaBootstrap, FaGit  } from "react-icons/fa";
-import { IoLogoJavascript, } from "react-icons/io5";
+import { FaHtml5, FaCss3, FaReact, FaBootstrap, FaGit, FaServer  } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { MdOutlinePublic } from 'react-icons/md';
 import { SiRedux } from "react-icons/si";
 
 // imgs
@@ -65,6 +66,8 @@ const getCardIcon = (ItemName, type, link) => {
 				return <FaBootstrap size={50} color='violet'/>;
 			case 'JavaScript':
 				return <IoLogoJavascript size={50} className='text-warning' />;
+			case 'RestApi':
+				return <MdOutlinePublic size={50} className='text-secondary' />;
 			case 'React':case 'React Native':
 				return <FaReact size={50} className='text-primary'/>;
 			case 'Redux':
