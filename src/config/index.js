@@ -21,6 +21,16 @@ module.exports = {
             URL: 'https://virgool.io/@Peymanfazeli',
         },
     },
+    bodySections: {
+        About: {
+            name: 'About Me',
+            Text: 'I am a front-end developer with solid professional experience in React and React Native, working on production mobile applications within distributed teams. I have grown within a mobile game development environment, contributing to feature development, performance improvements, and long-term codebase maintenance. I am comfortable collaborating across time zones and adapting to asynchronous workflows. My experience includes investigating performance issues, structuring state and UI logic, and working with Android native tooling when required. I focus on writing clean, maintainable code while actively developing the skills needed for senior-level ownership.'
+        },
+        hireMe: {
+            name: 'Why should you hire me?',
+            Text: 'You should hire me because I bring reliable execution, growing technical depth, and a strong sense of responsibility to remote and international teams. I can independently own features end to end, from understanding requirements to delivering stable, production-ready solutions. I am proactive in improving existing code, reducing complexity, and learning from more experienced engineers. I communicate clearly, ask the right technical questions, and adapt quickly to new systems and constraints. I am ready to take on broader ownership and progress naturally into a senior engineering role.'
+        }
+    },
     skills: [
         'HTML',
         'CSS',
