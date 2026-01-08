@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { motion } from "framer-motion";
 import '../App.css';
 import styled from 'styled-components'
@@ -19,10 +19,6 @@ const Container = styled.div `
 	align-items: center;
 `
 export default function Header() {
-	const splitText = useCallback((text, seperator) => {
-		console.log('seperator is', seperator)
-
-	}, [])
 	return (
 		<header className="App-header">
 			<Container
