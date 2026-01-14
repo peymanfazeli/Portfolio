@@ -12,6 +12,7 @@ const renderCard = (config, title) => {
 					description={value.description}
 					level={value.level || ''}
 					link={value.link || ''}
+					animationFromTop={'noAnimation'}
 				>
 					{title === 'Experiences' && value.date ? (
 						<span style={{fontSize: '10px'}}>{value.date}</span>
@@ -20,7 +21,7 @@ const renderCard = (config, title) => {
 			)
         });
     } else if (Array.isArray(config)) {
-		return config.map((item, index) => <Card key={index} Item={item} type={title} />)
+		return config.map((item, index) => <Card key={index} Item={item} type={title} animationFromTop={index%2 === 0} />)
     } else {
         return [];
     }
@@ -30,7 +31,7 @@ export default function Section({title, config}) {
 	return (
 		<div className='d-flex flex-column'>
 			<h2 className="text-start my-5">{title}</h2>
-			<div className={`d-flex flex-wrap  justify-content-start align-items-center`}>
+			<div className={`d-flex flex-wrap  justify-content-start align-items-center`} style={{backfaceVisibility: 'hidden'}}>
 				{renderCard(config, title)}	
 			</div>
 		</div>
