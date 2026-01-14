@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from '../components/Menu';
 import Header from '../components/Header';
 import Section from "../components/Section";
+import ContactForm from "../components/ContactForm";
 import config from "../config";
 import ContactMe from "../components/ContactMe";
 import Resume from "../components/Resume";
@@ -22,7 +23,7 @@ const getInitialTheme = () => {
 	if (storedTheme) {
 		return storedTheme;
 	}
-	return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+	return "dark";
   };
 
 
@@ -31,11 +32,13 @@ export default function Home() {
 		useEffect(() => {
 			document.body.classList.remove("theme-light", "theme-dark");
 			document.body.classList.add(`theme-${theme}`);
+			localStorage.setItem("theme", theme);
 		}, [theme]);
 	
 		const toggleTheme = () => {
 			const newTheme = theme === "dark" ? "light" : "dark";
 			setTheme(newTheme);
+			localStorage.setItem("theme", newTheme);
 		}
 	return (
 		<Container>
@@ -44,6 +47,7 @@ export default function Home() {
 			<Section title="Skills" config={config.skills} />
 			<Section title="Languages" config={config.Languages} />
 			<Section title="Experiences" config={config.experiences} />
+			<ContactForm />
 			<ContactMe />
 			<Resume />
 		</Container>
