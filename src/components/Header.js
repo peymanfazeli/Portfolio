@@ -9,6 +9,7 @@ import Article from './Article'
 // images
 import profile from '../assets/profile.png'
 import TextExpander from './TextExpander';
+import config from '../config'
 
 
 // style
@@ -31,7 +32,6 @@ export default function Header() {
 						// { text: 'More about me?', onClick: () => alert('Contact Me clicked') },
 					]}
 				>
-					{/* @TODO: these articles can come from config file*/}
 					<TextExpander
 						style={{
 							textAlign: 'justify',
@@ -41,9 +41,7 @@ export default function Header() {
 						buttonColor='transparent'
 						buttonTextColor='cyan'
 					>
-						👋 Hi! Im Peyman – a front-end developer specializing in React and Redux, with +2 years of experience in the web development world. Im passionate about learning, problem-solving, and creating great user experiences.
-						🎯 My focus is on React, Redux, UI design, backend integration, and learning React Native.
-						🔥 Im always looking for ways to improve and expand my skills in front-end and full-stack development!
+						{config.bodySections.About.Text}
 					</TextExpander>
 
 				</Article>
@@ -79,7 +77,7 @@ export default function Header() {
 						buttonTextColor='cyan'
 						newLineSymbol={'✅'}
 					>
-						✅Passionate about clean UI, performance, and smooth user experiences. ✅ I excel in problem-solving, backend integration, and teamwork. ✅ I’m constantly learning and improving, staying up to date with the latest web technologies. If you're looking for a dedicated, adaptable, and growth-oriented developer, let’s build something great together!
+						{config.bodySections.hireMe.Text}
 					</TextExpander>
 
 				</Article>

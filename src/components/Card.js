@@ -9,6 +9,34 @@ import { SiRedux } from "react-icons/si";
 // imgs
 import bzbz from '../assets/BazamBazi.png'
 // styles
+
+const moveInanimationFromTop = keyframes `
+	0% {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+	80% {
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+`;
+const moveInBottomAnimation = keyframes `
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	80% {
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+`;
+
 const CardContainer = styled.div`
 	width: 100px;
 	height:  ${props => props.type !== 'Experiences' ? '100px' : 'auto' };
@@ -23,6 +51,10 @@ const CardContainer = styled.div`
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	border: ${props => props.type !== 'Experiences' && '1px solid rgba(255, 255, 255, 0.3)'};
+	animation: ${props => props.animationFromTop === 'noAnimation' 
+		? 'none'
+		: props.animationFromTop ? moveInanimationFromTop : moveInBottomAnimation
+	} 1s ease-out;
 `
 const BluredBg = styled.div`
 	position: absolute;
@@ -116,6 +148,7 @@ export default function Card({
 	level='',
 	date='',
 	link='',
+	animationFromTop = false,
 	children
 }) {
 	const [isVisible, setIsVisible] = useState(false);
@@ -144,7 +177,7 @@ export default function Card({
 		};
 	  }, []);
 	return (
-		<CardContainer type={type} >
+		<CardContainer type={type} animationFromTop={animationFromTop}>
 			{type !== 'Experiences' && <BluredBg />}
 			{type === 'Languages' && <FillLevel ref={fillRef} percent={level} animate={isVisible} />}
 			{getCardIcon(Item, type, link)}
