@@ -62,7 +62,7 @@ const ContactForm = () => {
         <FormContainer>
             <FormSection id="appointmentForm">
                 <h2 class="mt-2 mb-5">LETS TALK ABOUT YOU</h2>
-                <form class="appointment-form" netlify method="POST" name="contact" data-netlify-redirect="./">
+                <form class="appointment-form" netlify method="POST" name="contact">
                     <input type="hidden" name="form-name" value="contact" />
 
                     <FormGroup>
