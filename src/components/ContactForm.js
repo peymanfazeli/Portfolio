@@ -57,7 +57,7 @@ const SubmitBtn = styled.button`
     animation: ${Pulse} 1s ease-in-out infinite;
 `;
 
-const ContactForm = ({}) => {
+const ContactForm = () => {
     return (
         <FormContainer>
             <FormSection id="appointmentForm">
