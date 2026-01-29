@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import styled, { keyframes } from 'styled-components'
 // Styled-components
 const FormContainer = styled.div`
@@ -58,71 +58,72 @@ const SubmitBtn = styled.button`
     animation: ${Pulse} 1s ease-in-out infinite;
 `;
 
-// const encode = (data) => {
-//     return Object.keys(data)
-//         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-//         .join("&");
-//   }
 const ContactForm = () => {
-    // const [formData, setFormData] = useState({
-    //     Name: "",
-    //     Proffesion: "",
-    //     CompanyName: "",
-    //     contactWay: ""
-    // });
+    const [submitted, setSubmitted] = useState(false);
 
-    //   const handleSubmit = e => {
-    //     setFormData({
-    //         Name: e.target.Name.value,
-    //         Proffesion: e.target.Proffesion.value,
-    //         CompanyName: e.target.CompanyName.value,
-    //         contactWay: e.target.contactWay.value
-    //     })
-    //     fetch("/", {
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //       body: encode({ "form-name": "contact", ...formData })
-    //     })
-    //       .then(() => alert("Success!"))
-    //       .catch(error => alert(error));
-  
-    //     e.preventDefault();
-    //   };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+            .then(() => setSubmitted(true))
+            .catch((error) => alert(error));
+    };
+
+    if (submitted) {
+        return (
+            <FormContainer>
+                <FormSection id="appointmentForm">
+                    <h2 className="mt-2 mb-5">Thank you!</h2>
+                    <p>Your message has been sent successfully.</p>
+                </FormSection>
+            </FormContainer>
+        );
+    }
 
     return (
         <FormContainer>
             <FormSection id="appointmentForm">
-                <h2 class="mt-2 mb-5">LETS TALK ABOUT YOU</h2>
-                <form class="appointment-form" method="POST" name="contact">
-                {/* <form onSubmit={handleSubmit}> */}
+                <h2 className="mt-2 mb-5">LETS TALK ABOUT YOU</h2>
+                <form
+                    className="appointment-form"
+                    method="POST"
+                    name="contact"
+                    data-netlify="true"
+                    onSubmit={handleSubmit}
+                >
                     <input type="hidden" name="form-name" value="contact" />
 
                     <FormGroup>
-                        <Label for="name" class="form-label">Your Name</Label>
-                        <Input type="text" id="name" name="Name" class="form-input" required />
+                        <Label htmlFor="name" className="form-label">Your Name</Label>
+                        <Input type="text" id="name" name="Name" className="form-input" required />
                     </FormGroup>
 
                     <FormGroup>
-                        <Label for="companyName" class="form-label">Company name</Label>
-                        <Input type="text" id="companyName" name="Proffesion" class="form-input" required />
+                        <Label htmlFor="companyName" className="form-label">Company name</Label>
+                        <Input type="text" id="companyName" name="CompanyName" className="form-input" required />
                     </FormGroup>
 
                     <FormGroup>
-                        <Label for="profession" class="form-label">Profession</Label>
-                        <Input type="text" id="profession" name="Proffesion" class="form-input" required />
+                        <Label htmlFor="profession" className="form-label">Profession</Label>
+                        <Input type="text" id="profession" name="Proffesion" className="form-input" required />
                     </FormGroup>
 
                     <FormGroup>
-                        <Label for="contactWay" class="form-label">Contact Via</Label>
-                        <Input type="text" id="contactWay" name="contactWay" class="form-input" required placeholder='Phone or Email' />
+                        <Label htmlFor="contactWay" className="form-label">Contact Via</Label>
+                        <Input type="text" id="contactWay" name="contactWay" className="form-input" required placeholder="Phone or Email" />
                     </FormGroup>
 
                     <FormGroup>
-                        <SubmitBtn type="submit" class="btn btn--submit">Register</SubmitBtn>
+                        <SubmitBtn type="submit" className="btn btn--submit">Register</SubmitBtn>
                     </FormGroup>
                 </form>
             </FormSection>
         </FormContainer>
-    )
+    );
 }
 export default ContactForm
