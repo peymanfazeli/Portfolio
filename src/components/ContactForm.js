@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import styled, { keyframes } from 'styled-components'
 // Styled-components
 const FormContainer = styled.div`
@@ -58,44 +58,43 @@ const SubmitBtn = styled.button`
     animation: ${Pulse} 1s ease-in-out infinite;
 `;
 
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
+// const encode = (data) => {
+//     return Object.keys(data)
+//         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+//         .join("&");
+//   }
 const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        Name: "",
-        Proffesion: "",
-        CompanyName: "",
-        contactWay: ""
-    });
+    // const [formData, setFormData] = useState({
+    //     Name: "",
+    //     Proffesion: "",
+    //     CompanyName: "",
+    //     contactWay: ""
+    // });
 
-      const handleSubmit = e => {
-        setFormData({
-            Name: e.target.Name.value,
-            Proffesion: e.target.Proffesion.value,
-            CompanyName: e.target.CompanyName.value,
-            contactWay: e.target.contactWay.value
-        })
-        console.log('e', e)
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", ...formData })
-        })
-          .then(() => alert("Success!"))
-          .catch(error => alert(error));
+    //   const handleSubmit = e => {
+    //     setFormData({
+    //         Name: e.target.Name.value,
+    //         Proffesion: e.target.Proffesion.value,
+    //         CompanyName: e.target.CompanyName.value,
+    //         contactWay: e.target.contactWay.value
+    //     })
+    //     fetch("/", {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //       body: encode({ "form-name": "contact", ...formData })
+    //     })
+    //       .then(() => alert("Success!"))
+    //       .catch(error => alert(error));
   
-        e.preventDefault();
-      };
+    //     e.preventDefault();
+    //   };
 
     return (
         <FormContainer>
             <FormSection id="appointmentForm">
                 <h2 class="mt-2 mb-5">LETS TALK ABOUT YOU</h2>
-                {/* <form class="appointment-form" netlify method="POST" name="contact"> */}
-                <form onSubmit={handleSubmit}>
+                <form class="appointment-form" method="POST" name="contact">
+                {/* <form onSubmit={handleSubmit}> */}
                     <input type="hidden" name="form-name" value="contact" />
 
                     <FormGroup>
