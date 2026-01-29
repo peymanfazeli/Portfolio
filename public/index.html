@@ -12,6 +12,14 @@
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<!-- Hidden form for Netlify: build bot detects this so form submissions work with React-rendered form -->
+		<form name="contact" method="POST" data-netlify="true" hidden>
+			<input type="text" name="Name" />
+			<input type="text" name="CompanyName" />
+			<input type="text" name="Proffesion" />
+			<input type="text" name="contactWay" />
+			<input type="hidden" name="form-name" value="contact" />
+		</form>
 		<div id="root"></div>
 	</body>
 </html>
