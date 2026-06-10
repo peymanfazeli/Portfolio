@@ -30,3 +30,4 @@ npm run build        # production build → ./build
 - **No test files exist** yet (Jest + RTL are configured but unused).
 - **Current branch**: `AiAugmentedDev` (trunk is `development`).
 - **CRA is un-ejected** — no custom webpack/Babel config possible without ejecting or using craco.
+- **`.npmrc` with `legacy-peer-deps=true`** is required (peer conflict: `react-scripts` needs TS 4.x, `i18next` needs TS 5/6). Both are `peerOptional`, so no runtime impact.
