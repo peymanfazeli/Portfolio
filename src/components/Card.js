@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components'
 import { motion } from "framer-motion";
 import { FaHtml5, FaCss3, FaReact, FaBootstrap, FaGit  } from "react-icons/fa";
@@ -151,8 +152,11 @@ export default function Card({
 	animationFromTop = false,
 	children
 }) {
+	const { t } = useTranslation();
 	const [isVisible, setIsVisible] = useState(false);
 	const fillRef = useRef(null);
+
+	const displayName = type === 'Languages' ? t(`languages.${Item}`) : Item;
 
 	useEffect(() => {
 		const element = fillRef.current; // Store the current reference
@@ -181,7 +185,7 @@ export default function Card({
 			{type !== 'Experiences' && <BluredBg />}
 			{type === 'Languages' && <FillLevel ref={fillRef} percent={level} animate={isVisible} />}
 			{getCardIcon(Item, type, link)}
-			<CardTitle>{Item}</CardTitle>
+			<CardTitle>{displayName}</CardTitle>
 			{children}
 		</CardContainer>
 	)

@@ -22,7 +22,6 @@ export default function TextExpander({
 	}
 	function displayText(text) {
 		let finalText = text.replace(/\n/g, newLineSymbol);
-		console.log('final text', finalText);
 		if (isCollapsed) {
 			return setCollapsedText(finalText);
 		}

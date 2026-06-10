@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled, { keyframes } from 'styled-components'
 // Styled-components
 const FormContainer = styled.div`
@@ -21,7 +22,7 @@ const FormSection = styled.section`
 
 const Label = styled.label`
     width: 100%;
-    text-align: left;
+    text-align: start;
 `;
 
 const Input = styled.input`
@@ -59,6 +60,7 @@ const SubmitBtn = styled.button`
 `;
 
 const ContactForm = () => {
+    const { t } = useTranslation();
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (e) => {
@@ -78,8 +80,8 @@ const ContactForm = () => {
         return (
             <FormContainer>
                 <FormSection id="appointmentForm">
-                    <h2 className="mt-2 mb-5">Thank you!</h2>
-                    <p>Your message has been sent successfully.</p>
+                    <h2 className="mt-2 mb-5">{t('form.successTitle')}</h2>
+                    <p>{t('form.successMessage')}</p>
                 </FormSection>
             </FormContainer>
         );
@@ -88,7 +90,7 @@ const ContactForm = () => {
     return (
         <FormContainer>
             <FormSection id="appointmentForm">
-                <h2 className="mt-2 mb-5">LETS TALK ABOUT YOU</h2>
+                <h2 className="mt-2 mb-5">{t('form.title')}</h2>
                 <form
                     className="appointment-form"
                     method="POST"
@@ -99,27 +101,27 @@ const ContactForm = () => {
                     <input type="hidden" name="form-name" value="contact" />
 
                     <FormGroup>
-                        <Label htmlFor="name" className="form-label">Your Name</Label>
+                        <Label htmlFor="name" className="form-label">{t('form.name')}</Label>
                         <Input type="text" id="name" name="Name" className="form-input" required />
                     </FormGroup>
 
                     <FormGroup>
-                        <Label htmlFor="companyName" className="form-label">Company name</Label>
+                        <Label htmlFor="companyName" className="form-label">{t('form.company')}</Label>
                         <Input type="text" id="companyName" name="CompanyName" className="form-input" required />
                     </FormGroup>
 
                     <FormGroup>
-                        <Label htmlFor="profession" className="form-label">Profession</Label>
+                        <Label htmlFor="profession" className="form-label">{t('form.profession')}</Label>
                         <Input type="text" id="profession" name="Proffesion" className="form-input" required />
                     </FormGroup>
 
                     <FormGroup>
-                        <Label htmlFor="contactWay" className="form-label">Contact Via</Label>
-                        <Input type="text" id="contactWay" name="contactWay" className="form-input" required placeholder="Phone or Email" />
+                        <Label htmlFor="contactWay" className="form-label">{t('form.contactVia')}</Label>
+                        <Input type="text" id="contactWay" name="contactWay" className="form-input" required placeholder={t('form.placeholder')} />
                     </FormGroup>
 
                     <FormGroup>
-                        <SubmitBtn type="submit" className="btn btn--submit">Register</SubmitBtn>
+                        <SubmitBtn type="submit" className="btn btn--submit">{t('form.submit')}</SubmitBtn>
                     </FormGroup>
                 </form>
             </FormSection>

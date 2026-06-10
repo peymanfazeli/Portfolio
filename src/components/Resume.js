@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled, { keyframes} from 'styled-components';
 
 import { FaTelegramPlane, FaEnvelope, FaLinkedin } from 'react-icons/fa';
@@ -99,7 +100,7 @@ export default function ContactMe({
 	className,
 	style
 	}) {
-
+	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleToggle = () => {
@@ -129,15 +130,16 @@ export default function ContactMe({
 			{isOpen && (
 				 <Menu>
 					{config.Resumes.map((item, index) => {
+						const resumeKey = item.link.includes('English') ? 'english' : 'persian';
 						return (
 							<IconLink
 								href={`${item.link}`}
-								rel={`${item.name !== 'Gmail' ? 'noopener noreferrer' : ''}`}
+								rel="noopener noreferrer"
 								onClick={() => setIsOpen(false)}
 								key={index}
 							>
 								{setContactIcon(item.name)}
-								{item.name}
+								{t(`resume.${resumeKey}`)}
 							</IconLink>
 						)
 					})}

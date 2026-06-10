@@ -1,0 +1,61 @@
+{
+  "header": {
+    "aboutTitle": "关于我",
+    "hireMeTitle": "为什么选择与我合作？"
+  },
+  "body": {
+    "about": "我是一名专注于 React 和 React Native 的前端开发工程师，具备在分布式团队中开发大型移动端产品的实战经验。从开发新功能到解决复杂的 Bug，再到优化游戏 App 的性能，我始终致力于编写整洁且易于维护的代码。我非常适应远程协作，能够高效处理跨时区工作。除了在 UI 逻辑和状态管理方面游刃有余外，必要时我也能处理 Android 原生代码。目前，我正满怀热情地迎接新的挑战，以进一步提升我的技术水平。",
+    "hireMe": "雇佣我，意味着你将拥有一位工作专注、极具责任感的合作伙伴。我习惯于独立负责一个功能模块，从需求理解到最终的高质量交付。我乐于向资深工程师学习，并不断寻求简化代码复杂性的方法。在沟通中，我力求清晰高效，能提出关键的技术问题，并能迅速适应新的系统和工作流。我已经准备好承担更大的责任，在迈向资深工程岗位的道路上稳步前进。"
+  },
+  "sections": {
+    "skills": "技能",
+    "languages": "语言",
+    "experiences": "工作经历",
+    "education": "教育背景"
+  },
+  "languages": {
+    "Persian": "波斯语",
+    "English": "英语",
+    "Turkish": "土耳其语",
+    "Deutsch": "德语"
+  },
+  "experience": {
+    "bazambazi": {
+      "title": "前端开发工程师",
+      "description": "使用 React, React Native 和 Redux 开发并维护“BazamBazi”网站、管理后台及移动端应用。"
+    }
+  },
+  "contact": {
+    "Telegram": "Telegram",
+    "Gmail": "Gmail",
+    "LinkedIn": "LinkedIn"
+  },
+  "resume": {
+    "english": "英文简历",
+    "persian": "波斯语简历"
+  },
+  "education": {
+    "ershad": {
+      "title": "软件工程学士",
+      "description": "毕业于 Ershad Damavand 大学，计算机工程专业。"
+    },
+    "sadra": {
+      "title": "软件工程硕士",
+      "description": "毕业于 Sadra 大学，计算机工程专业。"
+    }
+  },
+  "form": {
+    "title": "让我们聊聊",
+    "name": "怎么称呼您？",
+    "company": "您的公司？",
+    "profession": "您所在的职位？",
+    "contactVia": "我该如何联系您？",
+    "placeholder": "手机号或邮箱",
+    "submit": "发送消息",
+    "successTitle": "感谢您的来信！",
+    "successMessage": "消息已收到，我会尽快回复您。"
+  },
+  "aboutPage": {
+    "title": "关于我"
+  }
+}
