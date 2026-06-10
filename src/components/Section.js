@@ -27,12 +27,12 @@ const renderCard = (config, title) => {
     }
 };
 
-export default function Section({title, config}) {
+export default function Section({title, config, mainTitle}) {
 	return (
 		<div className='d-flex flex-column'>
 			<h2 className="text-start my-5">{title}</h2>
 			<div className={`d-flex flex-wrap  justify-content-start align-items-center`} style={{backfaceVisibility: 'hidden'}}>
-				{renderCard(config, title)}	
+				{renderCard(config, mainTitle)}	
 			</div>
 		</div>
 	)

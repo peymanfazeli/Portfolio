@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useTranslation } from 'react-i18next';
 // styles
 import "bootstrap/dist/css/bootstrap.min.css";
 // components
@@ -28,6 +29,7 @@ const getInitialTheme = () => {
 
 
 export default function Home() {
+	const { t } = useTranslation();
 	const [ theme, setTheme ] = useState(getInitialTheme());
 		useEffect(() => {
 			document.body.classList.remove("theme-light", "theme-dark");
@@ -44,9 +46,9 @@ export default function Home() {
 		<Container>
 			<Menu  theme={theme} onThemeToggle={toggleTheme} />
 			<Header />
-			<Section title="Skills" config={config.skills} />
-			<Section title="Languages" config={config.Languages} />
-			<Section title="Experiences" config={config.experiences} />
+			<Section title={t('sections.skills')} config={config.skills} mainTitle="Skills" />
+			<Section title={t('sections.languages')} config={config.Languages} mainTitle="Languages" />
+			<Section title={t('sections.experiences')} config={config.experiences} mainTitle="Experience" />
 			<ContactForm />
 			<ContactMe />
 			<Resume />

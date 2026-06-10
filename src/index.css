@@ -22,3 +22,16 @@ code {
   /* background: linear-gradient(0deg, rgba(41,9,121,1) 0%, rgb(124, 163, 255) 100%); */
   color: #ffffff;
 }
+
+/* RTL overrides */
+html[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+html[dir="rtl"] .dropdown-menu {
+  text-align: right;
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import '../App.css';
 import styled from 'styled-components'
 
@@ -9,7 +10,6 @@ import Article from './Article'
 // images
 import profile from '../assets/profile.png'
 import TextExpander from './TextExpander';
-import config from '../config'
 
 
 // style
@@ -19,13 +19,14 @@ const Container = styled.div `
 	align-items: center;
 `
 export default function Header() {
+	const { t } = useTranslation();
 	return (
 		<header className="App-header">
 			<Container
 				className='d-flex flex-column flex-sm-row justify-content-center align-items-center'
 			>
 				<Article
-					title='About me'
+					title={t('header.aboutTitle')}
 					content=''
 					buttons={[
 						// { text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
@@ -41,7 +42,7 @@ export default function Header() {
 						buttonColor='transparent'
 						buttonTextColor='cyan'
 					>
-						{config.bodySections.About.Text}
+						{t('body.about')}
 					</TextExpander>
 
 				</Article>
@@ -60,7 +61,7 @@ export default function Header() {
 						onClick={() => alert('Image clicked')}
 					/>
 				<Article
-					title='Why should you hire me?'
+					title={t('header.hireMeTitle')}
 					content=''
 					buttons={[
 						// { text: 'View Projects', onClick: () => alert('View Projects clicked'), bgColor: 'red' },
@@ -77,7 +78,7 @@ export default function Header() {
 						buttonTextColor='cyan'
 						newLineSymbol={'✅'}
 					>
-						{config.bodySections.hireMe.Text}
+						{t('body.hireMe')}
 					</TextExpander>
 
 				</Article>

@@ -9,6 +9,8 @@ import config from '../config';
 // imgs
 import logo from '../assets/logo.png';
 
+import LanguageSwitcher from './LanguageSwitcher';
+
 // styles
 const MenuContainer = styled.ul`
 	position: relative;
@@ -84,6 +86,7 @@ export default function Menu({ theme, onThemeToggle }) {
 				{/* menue */}
 				<div className={`collapse navbar-collapse ${hamburgurOpen ? 'show' : ''}`}>
 					<MenuContainer className="navbar-nav">
+						<LanguageSwitcher />
 						<button className="btn fixed-top-end" onClick={onThemeToggle}>
 							{theme === "dark" ? "🌞" : "🌙"}
 						</button>

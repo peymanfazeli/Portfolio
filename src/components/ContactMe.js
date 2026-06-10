@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled, { keyframes} from 'styled-components';
 
 import { FaTelegramPlane, FaEnvelope, FaLinkedin } from 'react-icons/fa';
@@ -99,7 +100,7 @@ export default function ContactMe({
 	className,
 	style
 	}) {
-
+	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleToggle = () => {
@@ -138,7 +139,7 @@ export default function ContactMe({
 								key={index}
 							>
 								{setContactIcon(item.name)}
-								{item.name}
+								{t(`contact.${item.name}`)}
 							</IconLink>
 						)
 					})}
