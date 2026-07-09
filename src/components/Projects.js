@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FaCode, FaStar, FaCodeBranch, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { FaStar, FaCodeBranch, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import config from '../config';
 
 import wordrushImg from '../assets/wordrush.png'
