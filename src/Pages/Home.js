@@ -11,12 +11,14 @@ import ContactForm from "../components/ContactForm";
 import config from "../config";
 import ContactMe from "../components/ContactMe";
 import Resume from "../components/Resume";
+import Projects from "../components/Projects";
 // styled components
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+	font-family: fredoka;
 `;
 
 const getInitialTheme = () => {
@@ -49,6 +51,7 @@ export default function Home() {
 			<Section title={t('sections.skills')} config={config.skills} mainTitle="Skills" />
 			<Section title={t('sections.languages')} config={config.Languages} mainTitle="Languages" />
 			<Section title={t('sections.experiences')} config={config.experiences} mainTitle="Experience" />
+			<Projects /> 
 			<ContactForm />
 			<ContactMe />
 			<Resume />

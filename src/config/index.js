@@ -66,6 +66,11 @@ module.exports = {
         {name: 'English Resume', link: "/Peyman_Fazeli_Resume_English.pdf"},
         {name: 'Persian Resume', link: "/Peyman_Fazeli_Resume_Persian.pdf"},
     ],
+    Projects: [
+        { name: 'WordRush', img: 'wordrush.png'},
+        { name: 'TicTacToe-game',img: 'tictactoe.png'},
+        { name: 'finance-assistant'},
+    ],
     Education: {
         "Ershad damavand University": {
             title: "Bachelor of Computer Software Engineering",
