@@ -68,6 +68,7 @@ module.exports = {
     ],
     Projects: [
         { name: 'WordRush', img: 'wordrush.png'},
+        { name: 'Forked-people', img: 'fork.png'},
         { name: 'TicTacToe-game',img: 'tictactoe.png'},
         { name: 'finance-assistant'},
     ],

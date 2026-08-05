@@ -7,6 +7,7 @@ import config from '../config';
 
 import wordrushImg from '../assets/wordrush.png'
 import tictactoeImg from '../assets/tictactoe.png'
+import forkImg from '../assets/fork.png'
 
 // ========= STYLES
 const LANG_COLORS = {
@@ -137,6 +138,7 @@ const Skeleton = styled.div`
 const IMG_MAP = {
     WordRush: wordrushImg,
     'TicTacToe-game': tictactoeImg,
+    'Forked-people': forkImg,
 };
 
 export default function Projects() {
