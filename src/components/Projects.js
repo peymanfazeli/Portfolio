@@ -222,6 +222,7 @@ export default function Projects() {
               >
                 {repo._img && <CardBgImage src={repo._img} alt="" />}
                 {/* Repo name + link */}
+                {console.log('repo.html_url', repo.homepage)}
                 <RepoName href={repo.html_url} target="_blank" rel="noopener noreferrer">
                   <FaGithub size={16} />
                   {repo.name}
@@ -254,7 +255,7 @@ export default function Projects() {
                     <FaCodeBranch size={12} /> {repo.forks_count}
                   </Badge>
                   {repo.homepage && (
-                    <HomepageLink href={repo.homepage} target="_blank" rel="noopener noreferrer">
+                    <HomepageLink href={repo.homepage.includes('https://') ? repo.homepage : `https://${repo.homepage}`} target="_blank" rel="noopener noreferrer">
                       <FaExternalLinkAlt size={11} /> Live Demo
                     </HomepageLink>
                   )}
